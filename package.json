@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fyosetake/OrganoChain/issues"
   },
-  "homepage": "https://github.com/fyosetake/OrganoChain#readme"
+  "homepage": "https://github.com/fyosetake/OrganoChain#readme",
+  "dependencies": {
+    "crypto-js": "^4.1.1"
+  }
 }
