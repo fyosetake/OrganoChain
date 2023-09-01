@@ -1,10 +1,11 @@
 class OrganicProduct {
-    constructor(id, name, gtin, category, origin) {
+    constructor(id, name, gtin, category, origin, stages = []) {
         this.id = id;
         this.name = name;
         this.gtin = gtin;
         this.category = category;
         this.origin = origin;
+        this.stages = stages;
     }
 
     getId() {
@@ -25,6 +26,10 @@ class OrganicProduct {
 
     getOrigin() {
         return this.origin;
+    }
+
+    addStage(stage) {
+      this.stages.push(stage);
     }
 }
 
