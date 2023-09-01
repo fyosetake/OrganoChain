@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/fyosetake/OrganoChain#readme",
   "dependencies": {
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "vue": "^3.3.4"
   }
 }
