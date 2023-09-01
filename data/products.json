@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Maçã",
+    "gtin": "1234567890123",
+    "category": "Frutas",
+    "origin": "Fazenda Santa Maria",
+    "stages": []
+  },
+  {
+    "id": 2,
+    "name": "Banana",
+    "gtin": "1234567890123",
+    "category": "Frutas",
+    "origin": "Fazenda Santa Mônica",
+    "stages": []
+  },
+  {
+    "id": 3,
+    "name": "Uva",
+    "gtin": "3456789012345",
+    "category": "F",
+    "origin": "Fazenda Santo Expedito",
+    "stages": []
+  },
+  {
+    "id": 4,
+    "name": "Caju",
+    "gtin": "4567890123456",
+    "category": "Frutas",
+    "origin": "Fazenda Santa Maria",
+    "stages": []
+  },
+  {
+    "id": 5,
+    "name": "Carambola",
+    "gtin": "5678901234567",
+    "category": "Frutas",
+    "origin": "Fazenda Santo Tomás",
+    "stages": []
+  }
+]

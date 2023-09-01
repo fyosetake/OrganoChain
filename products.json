@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "productName": "Maçã",
+    "gtin": "1234567890123",
+    "category": "Frutas",
+    "origin": "Fazenda Santa Maria"
+  },
+  {
+    "id": 2,
+    "name": "Uva",
+    "gtin": "1234567890123",
+    "category": "Frutas",
+    "origin": "Fazenda Santa Mônica",
+    "stages": []
+  }
+]
