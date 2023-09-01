@@ -38,5 +38,13 @@
     "category": "Frutas",
     "origin": "Fazenda Santo Tomás",
     "stages": []
+  },
+  {
+    "id": 6,
+    "name": "Ameixa",
+    "gtin": "9012345678901234",
+    "category": "Frutas",
+    "origin": "Fazenda Santa Teresa",
+    "stages": []
   }
 ]
