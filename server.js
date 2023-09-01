@@ -56,11 +56,15 @@ app.get('/get-products', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'registraProduto.html'));
+  res.sendFile(path.join(__dirname, 'public', 'registrarProduto.html'));
 });
 
-app.get('/registraProduto', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'registraProduto.html'));
+app.get('/registrarProduto', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'registrarProduto.html'));
+});
+
+app.get('/registrarProduto', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'registrarProduto.html'));
 });
 
 app.listen(port, () => {
