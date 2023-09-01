@@ -19,6 +19,7 @@
   "homepage": "https://github.com/fyosetake/OrganoChain#readme",
   "dependencies": {
     "crypto-js": "^4.1.1",
+    "express": "^4.18.2",
     "vue": "^3.3.4"
   }
 }
