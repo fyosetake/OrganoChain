@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar Ponto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #0074d9;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #0074d9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="stage">
+    <h1>Registrar Ponto</h1>
+    <form @submit.prevent="registerStage">
+        <label for="productId">ID do Produto:</label>
+        <input type="text" id="productId" name="productId" v-model="productId" required><br><br>
+        
+        <label for="stage">Estágio:</label>
+        <input type="text" id="stage" name="stage" v-model="stage" required><br><br>
+        
+        <label for="details">Detalhes:</label>
+        <input type="text" id="details" name="details" v-model="details" required><br><br>
+        
+        <input type="submit" value="Registrar Ponto">
+    </form>    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="/registrarPonto.js"></script>
+</body>
+</html>
