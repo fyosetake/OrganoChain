@@ -1,5 +1,5 @@
 const appVue = new Vue({
-  el: '#client',
+  el: '#product',
   data: {
     productName: '',
     gtin: '',

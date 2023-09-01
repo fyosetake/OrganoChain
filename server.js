@@ -34,21 +34,40 @@ app.post('/register-product', (req, res) => {
   res.status(201).send({ message: 'Produto registrado com sucesso.' });
 });
 
-app.post('/add-stage/:productId', (req, res) => {
-  const productId = parseInt(req.params.productId);
-  const { stage, details } = req.body;
+app.post('/add-stage', (req, res) => {
+  const { productId, stage, details } = req.body;
 
-  const product = products.find(p => p.id === productId);
+  // Encontre o produto com base no productId
+  const product = products.find(p => p.id === parseInt(productId));
+
   if (!product) {
     return res.status(404).send({ message: 'Produto não encontrado.' });
   }
 
-  product.addStage(stage, details);
+  // Crie uma cópia dos estágios existentes do produto e adicione o novo estágio
+  const updatedStages = [...product.stages, { stage, details }];
 
+  // Crie uma nova instância de OrganicProduct com os valores atuais do produto
+  const updatedProduct = new OrganicProduct(
+    product.id,
+    product.productName,
+    product.gtin,
+    product.category,
+    product.origin,
+    updatedStages // Defina os novos estágios no construtor
+  );
+
+  // Encontre o índice do produto original e substitua-o pelo novo produto na matriz de produtos
+  const index = products.findIndex(p => p.id === parseInt(productId));
+  if (index !== -1) {
+    products[index] = updatedProduct;
+  }
+
+  // Atualize o arquivo JSON com os produtos
   fs.writeFileSync(productsFile, JSON.stringify(products, null, 2));
 
-  console.log(`Estágio "${stage}" adicionado ao produto ${product.productName}`);
-  res.status(201).send({ message: 'Estágio adicionado com sucesso.' });
+  console.log(`Estágio "${stage}" adicionado ao produto ${updatedProduct.productName}`);
+  res.redirect('/RegistrarPonto');
 });
 
 app.get('/get-products', (req, res) => {
@@ -63,8 +82,8 @@ app.get('/registrarProduto', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'registrarProduto.html'));
 });
 
-app.get('/registrarProduto', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'registrarProduto.html'));
+app.get('/registrarPonto', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'registrarPonto.html'));
 });
 
 app.listen(port, () => {

@@ -1,7 +1,6 @@
 [
   {
     "id": 1,
-    "name": "Maçã",
     "gtin": "1234567890123",
     "category": "Frutas",
     "origin": "Fazenda Santa Maria",
@@ -45,6 +44,14 @@
     "gtin": "9012345678901234",
     "category": "Frutas",
     "origin": "Fazenda Santa Teresa",
+    "stages": []
+  },
+  {
+    "id": 7,
+    "name": "Laranja",
+    "gtin": "0912939232232",
+    "category": "Frutas",
+    "origin": "Fazenda Santa Gianna",
     "stages": []
   }
 ]
