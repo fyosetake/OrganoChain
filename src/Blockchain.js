@@ -1,12 +1,21 @@
 const Block = require('./Block');
 
 class Blockchain {
-  constructor() {
+  constructor(product) {
+    this.product = product;
     this.chain = [this.createGenesisBlock()];
+    this.currentTransactions = [];
   }
 
   createGenesisBlock() {
     return new Block(0, new Date().toString(), 'Genesis Block', '0');
+  }
+
+  loadBlockchain(data) {
+    // Carregue a blockchain a partir dos dados fornecidos (data)
+    if (Array.isArray(data)) {
+      this.chain = data;
+    }
   }
 
   getLatestBlock() {
