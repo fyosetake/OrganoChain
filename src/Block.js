@@ -1,10 +1,9 @@
 const crypto = require('crypto');
 
 class Block {
-  constructor(index, timestamp, product, stage, previousHash = '') {
+  constructor(index, timestamp, stage, previousHash = '') {
     this.index = index;
     this.timestamp = timestamp;
-    this.product = product;
     this.stage = stage;
     this.previousHash = previousHash;
     this.hash = this.calculateHash();
@@ -13,13 +12,9 @@ class Block {
   calculateHash() {
     return crypto
       .createHash('sha256')
-      .update(this.index + this.timestamp + JSON.stringify(this.data) + this.previousHash)
+      .update(this.index + this.timestamp + this.stage + this.previousHash)
       .digest('hex');
-  }
-  
-  addProduct(product) {
-    this.data.products.push(product);
-  }
+  }  
 }
 
 module.exports = Block;
