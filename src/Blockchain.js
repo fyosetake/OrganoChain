@@ -12,7 +12,6 @@ class Blockchain {
   }
 
   loadBlockchain(data) {
-    // Carregue a blockchain a partir dos dados fornecidos (data)
     if (Array.isArray(data)) {
       this.chain = data;
     }
@@ -29,15 +28,17 @@ class Blockchain {
   }
 
   isChainValid() {
-    for (let i = 1; i < this.chain.length; i++) {
-      const currentBlock = this.chain[i];
-      const previousBlock = this.chain[i - 1];
+    const { chain } = this;
+    chainLength = chain.length;
 
-      if (currentBlock.hash !== currentBlock.calculateHash()) {
-        return false;
-      }
+    for (let i = 1; i < chainLength; i++) {
+      const currentBlock = chain[i];
+      const previousBlock = chain[i - 1];
 
-      if (currentBlock.previousHash !== previousBlock.hash) {
+      const isCurrentBlockValid = currentBlock.hash === currentBlock.calculateHash();
+      const isPreviousBlockValid = currentBlock.previousHash === previousBlock.hash;
+
+      if (!(isCurrentBlockValid && isPreviousBlockValid)) {
         return false;
       }
     }
