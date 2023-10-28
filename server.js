@@ -112,6 +112,17 @@ app.get('/registrarPonto', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'registrarPonto.html'));
 });
 
+app.get('/get-blockchain-data', (req, res) => {
+  try {
+      const blockchainData = fs.readFileSync(blockchainFile, 'utf-8');
+      const blockchains = JSON.parse(blockchainData);
+      res.json(blockchains);
+  } catch (error) {
+      console.error('Erro ao ler o arquivo JSON:', error);
+      res.status(500).json({ error: 'Erro ao obter os dados do blockchain' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Servidor web rodando em http://localhost:${port}`);
 });
